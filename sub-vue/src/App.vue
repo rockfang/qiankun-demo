@@ -7,7 +7,22 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  methods: {
+    /**
+     * 路由切换
+     * url 路由地址
+     */
+    routerChange(url) {
+      console.log(`router url ${url}`)
+      this.$router.push(url).catch(err => {
+        console.log(err);
+      });
+    }
+  }
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
